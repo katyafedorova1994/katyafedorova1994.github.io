@@ -185,7 +185,7 @@
     .header_top_menu {
        @include flex-direction(column);
         a:not(.noborder){
-            border-right:1px solid white;
+            border-right:0px solid #feab12;
             padding: 0px 35px;
         }
     }

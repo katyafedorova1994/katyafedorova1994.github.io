@@ -80,7 +80,6 @@ header:hover {
 
 .wrapper {
   width: 1290px;
-  border: 1px solid red;
   margin: 0 auto;
 }
 
@@ -1070,7 +1069,7 @@ input[type="submit"] {
             flex-direction: column;
   }
   .header_top_menu a:not(.noborder) {
-    border-right: 1px solid white;
+    border-right: 0px solid #feab12;
     padding: 0px 35px;
   }
   .menu2 {
