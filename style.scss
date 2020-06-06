@@ -1,0 +1,555 @@
+@import "./flexbox_mixin";
+@import "./reset";
+@import "./fonts";
+@import "./animation_mixin";
+@import "./transforms_mixin";
+
+header{
+    background-color: #f2f2f2;
+}
+.wrapper{
+    width:1290px;
+    // border:1px solid red;
+    margin: 0 auto;
+}
+.top{
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+    line-height:40px;
+    font-size: 11px;
+    a{
+        text-decoration: none;
+        font-family: Lato;
+        color:#393939; 
+    }
+}
+.top > a:before{
+    content: "\1F4DE";
+    margin-right: 10px;
+}
+.header_top_menu{
+    @include flexbox();
+    text-transform: uppercase; 
+    a:not(.noborder){
+        border-right:1px solid #393939;
+        padding: 0px 35px;
+    }
+}
+.header_top_menu li a:last-child{
+    padding: 0px 15px 0px 35px;
+}
+.header_top_menu li :hover{
+    color: grey;
+}
+.menu{
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    position: relative;
+    height:130px;
+}
+.menu1 {
+    @include flexbox();
+    a{
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 30px;
+    color:black;
+    font-family: Playfire;
+    font-weight: bold;
+    }
+}
+.menu1 li:hover {
+    @include scale(1.2);
+}
+.img{
+    position: absolute;
+    left: 42%;
+}
+.icons{
+    @include flexbox();
+    position: absolute;
+    left: 73%;
+    a{
+    padding: 0px 5px; 
+    }
+}
+.menu2{
+    @include flexbox();
+    margin-right: 10px;
+    text-transform: uppercase;
+    background-color: black;
+    position: relative;
+    line-height: 37px;
+    z-index: 1;
+    a{
+        color:white;
+        font-family: Lato;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        padding-left: 35px;
+    }
+}
+.menu2_sub_menu:hover .sub_menu{
+    display:block;
+}
+.sub_menu{
+    background-color: #242424;
+    position: absolute;
+    width: 112px;
+    display: none;
+    a{
+        padding: 0px 5px 0px 55px;
+    }
+}
+.menu2_sub_menu > a:after{
+    content: "▼";
+    padding: 0px 5px 0px 10px;
+}
+.image{
+     background: linear-gradient(180deg, rgba(117,112,107,1) 0%, rgba(140,135,132,1) 50%, rgba(135,130,126,1) 100%);
+}
+.slider{
+    background-image: url(./images/bg.png);
+    height:692px;
+    width: 100%;
+    position: relative;
+    .left-arrow{
+        position: absolute;
+        left: 0px;
+        top: 270px;
+    }
+    .right-arrow{
+        position: absolute;
+        right: 0px;
+        top: 270px;
+    }
+}
+.sale{
+    width:275px;
+    height: 275px;
+    border:3px solid white;
+    position: absolute;
+    bottom: 40%;
+    left: 40%;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    cursor: pointer;
+}
+table{
+    width: 265px;
+    height: 265px;
+    border:1px solid white;
+    td{
+        
+        padding-top:20px;
+        .p1{
+            font-size: 20px;
+            font-family: Lato;
+            text-align: center;
+            color:white;
+        }
+        .p2{
+            font-size: 58px;
+            font-weight: bold;
+            @extend .p1;
+            color:black;
+        }
+        .p3{
+            @extend .p1;
+        }
+        .p4{
+            @extend .p1;
+            text-align: end;
+            color:black;
+            width: 100px;
+        }
+        .p5{
+            font-size: 20px;
+            font-family: Lato;
+            width: 100px;
+        }
+        .p6{
+            text-align: end;
+            color:white;
+        }
+        .p7{
+            color:white;
+        }
+        .w60{
+            width:60px;
+        }
+    }
+}
+
+.slider:after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 65px 205px 0 205px;
+    border-color: #7a7571 transparent transparent transparent;
+    position: absolute;
+    right: 33%;
+}
+button{
+    background-color:#f09d66;
+    height:50px;
+    width:190px;
+    position: absolute;
+    left: 44%;
+    bottom: 23%;
+    border: 0;
+    padding: 0;
+    a{
+        text-decoration: none;
+        font-size: 24px;
+        font-family: Lato;
+        text-transform: uppercase;
+        color:white;
+    }
+}
+button a:hover{
+    color: black;
+}
+.scroll {
+    @include flexbox();
+    right: 47%;
+    bottom: 30px;
+    position: absolute;
+    .scroll-i{
+        width: 10px;
+        height: 10px;
+        background-color: #b2b2b2;
+        margin: 0 5px;
+        transform: rotate(45deg);
+        cursor: pointer;
+    }
+}
+.scroll-i:hover {
+    background-color: black;
+    opacity: 0.7;
+    margin: 0 5px;
+}
+
+.white{
+    margin:65px 0px 50px 0px;
+    .actions{
+        @include flexbox();
+    }
+    img{
+        width:100%;
+    }
+}
+.actions div{
+    position: relative;
+    .i{
+        display:flex;
+        position: absolute;
+        top: 22px;
+        left: 30px;
+        align-items: center;
+        color: white;
+        font-family: Lato;
+        font-weight: bold;
+    }
+    .ii{
+        @extend .i;
+        left: 55px;
+    }
+    .iii{
+        @extend .i;
+        left: 70px;
+    }
+}
+.i img, .ii img, .iii img{
+        width:40px;
+}
+.free{
+    margin-left: 30px;
+    .m{
+        padding-top: 10px;
+        font-size: 14px;
+    }
+}
+.free p:first-child{
+    margin: 0;
+    font-size: 30px;
+}
+
+.collection{
+    margin:80px 0px 60px 0px;
+    .c{
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        position: relative; 
+    }
+    .line {
+        background-color: #eaeaea;
+        height: 2px;
+        width: 430px;
+      }
+      .div500{
+        width:500px;
+        position: relative;
+        @include flexbox();
+        @include justify-content(center);
+        .sum{
+            font-size: 30px;
+            font-family: Playfire;
+        }
+    }
+}
+.sum:before{
+    content:url(./images/summer.png);
+    position: absolute;
+    left: 50px;
+}
+.sum:after{
+    content:url(./images/summer.png); 
+    position: absolute;
+    right: 50px;
+}
+.gallary{
+    margin-bottom: 95px; 
+}
+.grid-container {
+    display: grid;
+      grid-gap: 15px;
+      @include justify-content(space-between);
+      grid-template-columns: auto auto auto auto;
+      padding: 15px;
+      border: 1px solid #eaeaea;
+}
+.grid-item1{
+    position: relative;
+    opacity: 0.9;
+}
+.grid-item1 > a > img{
+    width:300px;
+    height:348px;
+}
+.circle {
+    width: 50px;
+    height: 50px;
+    background: #feab12;
+    border-radius: 50%;
+    position: absolute;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    top: 20px;
+    left: 20px;
+    a{
+        color: white;
+        font-size: 20px;
+        font-family: Lato;
+        text-decoration:none;
+    }
+  }
+
+  .trap{
+    border-bottom: 40px solid black;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0; 
+    width: 130px;
+    color:white;
+    text-align:center;
+    line-height:40px;
+    position: absolute;
+    bottom: 3px;
+    right: 60px;
+    display: none;
+    a{
+        text-decoration: none;
+        color:white;
+        font-family: Lato;
+    }
+  }
+.heart{
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+}
+
+.grid-item1:hover{
+    opacity: 1;
+}
+.grid-item1:hover .heart{
+    display: block;
+}
+.grid-item1:hover .trap{
+    display: block;
+}
+.trap:hover{
+    border-bottom: 40px solid #feab12;
+}
+footer{
+    background-color:#141414;
+}
+.footer{
+    padding: 70px 0px 120px 0px;
+}
+.footer1{
+    @include flexbox();
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+}
+.footer_left{
+    @include flexbox();
+    p{
+        font-size: 16px;
+        font-family: Lato;
+        color:white;
+        padding-bottom: 55px;
+    }
+    a{
+            font-family: Lato;
+            color:#b2b2b2;
+            font-size: 14px;
+            line-height: 36px;
+            text-decoration: none;
+    }
+}
+.footer_left div{
+    width: 155px;
+}
+.footer_left_list2{
+    margin: 0 90px;
+}
+
+.footer_right{
+    margin: 0 120px;
+    p{
+        font-size: 16px;
+        font-family: Lato;
+        color:white;
+    }
+}
+.icons2{
+    @include flexbox();
+    padding:50px 0px;
+    a{
+    padding: 0px 5px;
+    }
+}
+.in{
+    font-size: 16px;
+    font-family: Playfire;
+    opacity: 0.7;
+}
+form{
+    padding-top: 60px;
+    position: relative;
+}
+input[type="email"]{
+    width:360px;
+    height: 40px;
+    border: 1px solid #323030;
+    background-color: #141414;
+    padding-left: 20px;
+}
+input[type="submit"]{
+    width:100px;
+    height: 36px;
+    background-color: #323030;
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    color:white; 
+    border: 0;
+    padding: 0;
+}
+.footer2{
+    padding-top: 120px;
+    font-family: Lato;
+    color:#b2b2b2;
+    font-size: 11px;
+    line-height: 18px;
+    position: relative;
+    p{
+        opacity: 0.5;
+    }
+    .cards{
+        @include flexbox();
+        padding-top:30px;
+        div{
+            padding-right: 20px;
+        }
+    }
+}
+.top2{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 140px;
+    right: 5px;
+    img{
+        width: 20px;
+        height: 20px;
+    }
+}
+// .div280{
+//     width:278px;
+//     height: 278px;
+//     border:3px solid black;
+//     position: absolute;
+// }
+// table{
+//     width: 270px;
+//     height: 270px;
+//     td{
+//         border:1px solid black;
+//         padding-top:20px;
+//         .p1{
+//             font-size: 20px;
+//             font-family: Lato;
+//             text-align: center;
+//         }
+//         .p2{
+//             font-size: 58px;
+//             @extend .p1;
+//         }
+//         .p3{
+//             @extend .p1;
+//         }
+//         .p4{
+//             @extend .p1;
+//             text-align: end;
+//         }
+//         .p5{
+//             font-size: 20px;
+//             font-family: Lato;
+//         }
+//         .p6{
+//             text-align: end;
+//         }
+//         .w60{
+//             width:60px;
+//         }
+//     }
+// }
+
+
+
+
+
+@import "./media";
+
+
+
+
+
+
