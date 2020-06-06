@@ -34,17 +34,19 @@
         top: 135px;
     }
     .sale{
-        display: none;
+        bottom: 27%;
+        left: 32%;
+        z-index:1;
     }
     button {
         background-color: #f09d66;
         width: 150px;
-        left: 40%;
-        bottom: 52%; 
+        left: 41%;
+        bottom: 14%; 
     }
     .scroll{
-    right: 46%;
-    bottom: 50px;
+    right: 45%;
+    bottom: 32px;
     }
     .free p:first-child {
         margin: 0;
@@ -77,6 +79,10 @@
     .top2{
         top:10px;
     }
+    @keyframes mymove3 {
+        from {top: 10px;}
+        to {top: -30px;}
+        }
 }
 
 @media (max-width: 768px) {
@@ -111,10 +117,14 @@
     .slider .left-arrow {
         top: 65px;
     }
+    .sale{
+        display: none;
+    }
     button {
         width: 100px;
         height:30px;
         bottom: 60%;
+        left:40%;
         a{
             font-size: 16px;
             }
@@ -201,7 +211,7 @@
         top: 30px;
     }
     .scroll{
-        right:38%;
+        right:39%;
         bottom:28px;
     }
     .actions{
@@ -243,6 +253,10 @@
         width: 255px;
     }
     .top2 {
-        top: 50px;
+        top: 60px;
     }
+    @keyframes mymove3 {
+        from {top: 60px;}
+        to {top: 30px;}
+        }
 }

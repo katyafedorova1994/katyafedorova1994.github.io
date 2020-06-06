@@ -70,10 +70,17 @@ table {
 
 header {
   background-color: #f2f2f2;
+  -webkit-transition: background 2s;
+  transition: background 2s;
+}
+
+header:hover {
+  background: #feab12;
 }
 
 .wrapper {
   width: 1290px;
+  border: 1px solid red;
   margin: 0 auto;
 }
 
@@ -164,11 +171,17 @@ header {
 .menu1 li:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .img {
   position: absolute;
   left: 42%;
+}
+
+.img a {
+  display: block;
 }
 
 .icons {
@@ -181,6 +194,7 @@ header {
 
 .icons a {
   padding: 0px 5px;
+  display: block;
 }
 
 .menu2 {
@@ -205,14 +219,20 @@ header {
 }
 
 .menu2_sub_menu:hover .sub_menu {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .sub_menu {
   background-color: #242424;
   position: absolute;
   width: 112px;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-property: opacity, visibility;
+  transition-property: opacity, visibility;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 .sub_menu a {
@@ -240,12 +260,52 @@ header {
   position: absolute;
   left: 0px;
   top: 270px;
+  -webkit-animation: mymove2 2s infinite linear;
+          animation: mymove2 2s infinite linear;
 }
 
 .slider .right-arrow {
   position: absolute;
   right: 0px;
   top: 270px;
+  -webkit-animation: mymove 2s infinite linear;
+          animation: mymove 2s infinite linear;
+}
+
+@-webkit-keyframes mymove {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 30px;
+  }
+}
+
+@keyframes mymove {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 30px;
+  }
+}
+
+@-webkit-keyframes mymove2 {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 30px;
+  }
+}
+
+@keyframes mymove2 {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 30px;
+  }
 }
 
 .sale {
@@ -269,6 +329,12 @@ header {
   -webkit-box-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+.sale:hover {
+  border-radius: 50%;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 table {
@@ -351,6 +417,8 @@ button a {
 
 button a:hover {
   color: black;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .scroll {
@@ -482,6 +550,10 @@ button a:hover {
   font-family: Playfire;
 }
 
+.sum span:hover {
+  color: brown;
+}
+
 .sum:before {
   content: url(./images/summer.png);
   position: absolute;
@@ -585,6 +657,8 @@ button a:hover {
 
 .grid-item1:hover {
   opacity: 1;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .grid-item1:hover .heart {
@@ -597,6 +671,8 @@ button a:hover {
 
 .trap:hover {
   border-bottom: 40px solid #feab12;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 footer {
@@ -752,6 +828,29 @@ input[type="submit"] {
   height: 20px;
 }
 
+.top2:hover {
+  -webkit-animation: mymove3  infinite 5s linear;
+          animation: mymove3  infinite 5s linear;
+}
+
+@-webkit-keyframes mymove3 {
+  from {
+    top: 140px;
+  }
+  to {
+    top: 30px;
+  }
+}
+
+@keyframes mymove3 {
+  from {
+    top: 140px;
+  }
+  to {
+    top: 30px;
+  }
+}
+
 @media (max-width: 1290px) {
   .wrapper {
     width: 728px;
@@ -782,17 +881,19 @@ input[type="submit"] {
     top: 135px;
   }
   .sale {
-    display: none;
+    bottom: 27%;
+    left: 32%;
+    z-index: 1;
   }
   button {
     background-color: #f09d66;
     width: 150px;
-    left: 40%;
-    bottom: 52%;
+    left: 41%;
+    bottom: 14%;
   }
   .scroll {
-    right: 46%;
-    bottom: 50px;
+    right: 45%;
+    bottom: 32px;
   }
   .free p:first-child {
     margin: 0;
@@ -826,6 +927,22 @@ input[type="submit"] {
   }
   .top2 {
     top: 10px;
+  }
+  @-webkit-keyframes mymove3 {
+    from {
+      top: 10px;
+    }
+    to {
+      top: -30px;
+    }
+  }
+  @keyframes mymove3 {
+    from {
+      top: 10px;
+    }
+    to {
+      top: -30px;
+    }
   }
 }
 
@@ -868,10 +985,14 @@ input[type="submit"] {
   .slider .left-arrow {
     top: 65px;
   }
+  .sale {
+    display: none;
+  }
   button {
     width: 100px;
     height: 30px;
     bottom: 60%;
+    left: 40%;
   }
   button a {
     font-size: 16px;
@@ -974,7 +1095,7 @@ input[type="submit"] {
     top: 30px;
   }
   .scroll {
-    right: 38%;
+    right: 39%;
     bottom: 28px;
   }
   .actions {
@@ -1021,7 +1142,23 @@ input[type="submit"] {
     width: 255px;
   }
   .top2 {
-    top: 50px;
+    top: 60px;
+  }
+  @-webkit-keyframes mymove3 {
+    from {
+      top: 60px;
+    }
+    to {
+      top: 30px;
+    }
+  }
+  @keyframes mymove3 {
+    from {
+      top: 60px;
+    }
+    to {
+      top: 30px;
+    }
   }
 }
 /*# sourceMappingURL=style.css.map */
